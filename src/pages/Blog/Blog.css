@@ -1,0 +1,6 @@
+.card-titles:hover {
+    color: orange!important;
+    font-size: 20px;
+    cursor: pointer;
+    
+}

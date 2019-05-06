@@ -1,9 +1,12 @@
 import React, { Component } from "react"
+import './Blog.css'
+
 class Blog extends Component {
 
   render() {
     return (
       <div className="container">
+      <div className="row">
         <div className="col-md-4 mb-4">
           <div className="card">
             <img
@@ -16,7 +19,7 @@ class Blog extends Component {
                 className="card-title"
                 style={{ fontFamily: '"Ubuntu", sans-serif', color: "#fd5f00" }}
               >
-                {this.props.data.title}
+                <a className="card-titles" onClick={ () => this.props.goDetail(this.props.data.id) }>{this.props.data.title}</a>
               </h5>
               <table className="table-responsive mt-3">
                 <thead />
@@ -49,6 +52,7 @@ class Blog extends Component {
               <small className="text-muted"> Posted at 24/02/2019</small>
             </div>
           </div>
+        </div>
         </div>
       </div>
     );
