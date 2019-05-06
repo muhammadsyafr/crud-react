@@ -43,7 +43,7 @@ export default class BlogPost extends Component {
   }
 
   postToAPI = () => {
-    axios.post("http://localhost:3004/posts", this.state.semiPost).then(
+    axios.post("https://lit-dawn-81985.herokuapp.com/posts", this.state.semiPost).then(
       res => {
         console.log(res);
         this.getBackAPI();
@@ -64,7 +64,7 @@ export default class BlogPost extends Component {
 
   putDataToAPI = () => {
       // let id = data.id
-      axios.put(`http://localhost:3004/posts/${this.state.semiPost.id}`,this.state.semiPost).then((res) => {
+      axios.put(`https://lit-dawn-81985.herokuapp.com/posts/${this.state.semiPost.id}`,this.state.semiPost).then((res) => {
           console.log(res)
           this.getBackAPI();
           this.setState({
@@ -80,7 +80,7 @@ export default class BlogPost extends Component {
   }
 
   getBackAPI = () => {
-    axios.get("http://localhost:3004/posts?_sort=id&_order=desc")
+    axios.get("https://lit-dawn-81985.herokuapp.com/posts?_sort=id&_order=desc")
       .then(result => {
         this.setState({
           post: result.data
@@ -89,7 +89,7 @@ export default class BlogPost extends Component {
   };
 
   RemoveFromAPI = data => {
-    axios.delete(`http://localhost:3004/posts/${data}`).then(res => {
+    axios.delete(`https://lit-dawn-81985.herokuapp.com/posts/${data}`).then(res => {
       console.log(res);
       this.getBackAPI();
     });
