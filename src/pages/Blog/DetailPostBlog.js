@@ -10,7 +10,7 @@ export default class DetailPostBlog extends Component {
   }
   componentDidMount(){
     // console.log(this.props.match.params.BlogId)
-    axios.get(`http://localhost:3004/posts/${this.props.match.params.BlogId}`).then((res) => {
+    axios.get(`https://lit-dawn-81985.herokuapp.com/posts/${this.props.match.params.BlogId}`).then((res) => {
         console.log(res)
         let post = res.data
         this.setState({
